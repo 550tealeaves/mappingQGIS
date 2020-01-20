@@ -31,8 +31,8 @@ This tutorial will guide you through the very basics of GIS mapping concepts. Th
 
 -----
 
-Session leader: Javier Otero Peña  
-Based on previous work by: Javier Otero Peña 
+Session leader: Olivia Ildefonso
+Based on previous work by: Olivia Ildefonso and Javier Otero Peña 
 
 [![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/)
 
