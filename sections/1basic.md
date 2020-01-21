@@ -42,7 +42,7 @@ Shapefile of NYC neighborhoods (called Neighborhood Tabulation Areas or NTAs)
 #### 5.	Let’s get the shapefile of NYC neighborhoods (called Neighborhood Tabulation Areas or NTAs)
 * Download the shapefile on this site (click on Export, then “shapefile”): https://data.cityofnewyork.us/City-Government/Neighborhood-Tabulation-Areas/cpf4-rkhq
 * Save the zip file somewhere that you can easily navigate to.
-* *Note: Shapefiles are generally shared in Zip files, because shapefiles are not self contained in a single file, but a composite of several files of different formats that must be all together in the same folder and all have to share the same file name (similar to csv files and their csvt type references). GIS software knows how to read zip files that contain a single shapefile. ESRI ArcGIS online is one of these, and can only read shapefiles when uploaded as Zip files.
+* *Note: Shapefiles are generally shared in Zip files, because shapefiles are not self contained in a single file, but a composite of several files of different formats that must be all together in the same folder and all have to share the same file name (similar to csv files and their csvt type references). GIS software knows how to read zip files that contain a single shapefile. ESRI ArcGIS online is one of these, and can only read shapefiles when uploaded as Zip files.*
 
 
 #### 6.	Perform a spatial join between the shapefile of NYC neighborhoods and the spreadsheet “Median Household Income by Neighborhood”
