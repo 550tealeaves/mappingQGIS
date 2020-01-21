@@ -1,41 +1,46 @@
 [<<< Previous](../README.md)  | [Next >>>](2setup.md)  
 
-# Basic GIS Lexicon
+# Phase 1: Find, Clean and Manipulate data
 
-A good way to start talking about GIS concepts is by looking at a conventional map and analyzing the information it shows:
+## Datafiles
 
-![Map of Current Rail Speeds in the United States](images/usamap.png)
+10 Popular NYC Sites
+* http://bit.ly/DRIMapping2020 
+* File is called “NYCSites.csv”
 
-CC BY-SA 3.0 derivative work: User:Justthisonceokey Blank_US_Map.svg: User:Theshibboleth – Blank_US_Map.svg: User:Theshibboleth Routes derived from Amtrak-Streckennetz.svg Speed limits own work. Inspired by High_Speed_Railroad_Map_of_Europe_2013.svg
+Median Household Income by Neighborhood
+* Data Source: https://data.cityofnewyork.us/City-Government/Demographic-Profiles-of-ACS-5-Year-Estimates-at-th/8cwr-7pqn 
+* File is called “MedHouseInc.csv”
 
-This map shows the current rail speeds in the United States. Even without a title, it’s possible to know it's the United States because the shape of the country and the states therein are recognizable. The map also shows railroad information (the lines) and their respective speeds (different colors, according to the legend), plus cities that have railroads (red dots) and states (gray polygons). In GIS, these points, lines and polygons are known as *features*.
+Shapefile of NYC neighborhoods (called Neighborhood Tabulation Areas or NTAs)
+* Data Source: https://data.cityofnewyork.us/City-Government/Neighborhood-Tabulation-Areas/cpf4-rkhq
 
-## Layers
+Shapefile and Median Household Income CSV combined
+* http://bit.ly/DRIMapping2020 
+* File is called “manhattanmhinc”
 
-Data in QGIS is organized in "layers." To understand layers, imagine having several different transparency film sheets, each one with a different type of features drawn over it. For example, one transparency sheet to display US states, another one to display only railroads, and a last one to display just the red dots that represent the cities. When these transparent sheets are overlayed on top of each other, they would look like the map above. Each of these features is represented as a vector—that is, scalable points, lines or polygons that can be easily created, edited, or deleted using QGIS.
 
-## Features and Attributes
+## Steps
 
-A feature is a entity that appears in a layer on a map. For example, each feature on the above railroads layer would represent one railroad line. An *attribute* is a characteristic of a feature, for example, speed or length of each of the railroad lines.
+1.	Let’s open each of the files in order.
 
-Each layer contains the same type of feature. For example, a typical attribute in the cities layer is population. This allows the population of one city to be compared to the population of another city. Each layer will have its own attribute table, which is basically a spreadsheet showing each feature as a row, and each attribute as a column. Just like in stats software, attributes can contain data as strings (text), numerical, date, or boolean.
+2.	You will see the the “NYCSite.csv” file has already been cleaned for you, so that it only includes the information that we want. Let’s ignore that file for now and work on the ones that need to be cleaned.
 
-## Geographic Data and Coordinate Reference System
+3.	Let’s get the data on the Median Household Income by Neighborhood
+* Download the Excel Spreadsheet on this site: https://data.cityofnewyork.us/City-Government/Demographic-Profiles-of-ACS-5-Year-Estimates-at-th/8cwr-7pqn 
+* Unzip the file ACS5yrNTA.zip, then open the file called “econ_2016acs5yr_nta.xlsx” using Excel or any similar spreadsheet editor. 
 
-GIS files will also include geographic data that tells QGIS what vectors to create for each feature (be they points, lines or polygons), that will be represented in space according to a Coordinate Reference System (CRS), which is basically a reference for QGIS to know how to transpose aspects in a three-dimensional spherical world into two-dimensional rectangular representations. All layers in your map must be on the same CRS, otherwise data will be inaccurate or even incompatible.
+4.	Let’s clean the data on the Median Household Income by Neighborhood
+* The first step is to do a “save as” so you can keep the original document as a reference before you start cleaning the data. Let’s name the file “MedianIncome.xslx”. 
+* Now let’s find the data that we want and remove the data that we don’t need. 
+* We want the median household income, so let’s find that in the Dictionary tab.
+* We are going to keep “MdHHIncE,” the “Pop16plE” and the variables that are keys or identifiers, such as the GEOID, GeoGName, Borough, and we are going to delete the rest of the variables.
+* Make sure that “MdHHIncE” and “Pop16pIE” are formatted as numbers. To do this, you can select the whole columns from row 2 to the last one, then right-click on the selection, click on “Format cells…”, then select “Number” from the category list. Also, specify decimals to “0”. The reason for this is that sometimes converting Excel files to comma-separated-value files (CSV) can bring about some formatting conflicts, so this will hopefully get rid of some of it.
+* Save the file as a CSV. I called mine “JoinClean”
+* *Note: Another useful way to define column formats is creating a csvt file that specifies the format of each column in a csv file of the same name in the same folder. The csvt is just a txt file which contains text in the form of: “String”,”Real”,”Integer”,”String”. In this example, column one will be interpreted as a string (text), column 2 as a real number (number with decimals), column 3 as an integer, and so on. We will not do this in this exercise.
+* Be sure to save your changes.
 
-Below you will find two projections of the United States. Notice in the first one that the shape of the country is different to the shape we are used to seeing on maps, because it is a different projection (Sphere Azimuthal Equidistant projection). The second example is using a projection that is intended for Tokyo. Alaska and Hawaii are visible, but the United States mainland became a sprayed line. Tokyo would look great on this projection, though. This gives you an idea of how important CRS are, and how different the same geographic shapes can look depending on the projection.
 
-![Sphere Azimuthal Equidistant projection](images/proy1.png)  ![Tokyo Japan Plane Rectangular CS XVIII](images/proy2.png)
 
-Bear in mind that data might not have geographic information but could still be used in QGIS. For example, if on one hand you have a spreadsheet with data about the states, and on the other hand you have a vector layer representing states but with no attributes, you can join the dataset and the vector layer so that all the data in the spreadsheet will become attributes for the vector layer. You can also map points on a map if you have coordinates or even physical addresses. The process of using geographic data to represent features on a GIS is called georeferencing. 
-
-## File Formats in QGIS: Shapefiles
-
-Vector layers are commonly shared in shapefile format (.SHP). Shapefiles in GIS generate many files with the same name but different formats, and they all need to be in the same location for QGIS and other GIS software to open them correctly. Remember this when saving and copying layers. To tackle this inconvenience, GIS software has evolved and allows to read compressed files (i.e. .zip, .gz) that already contain all of the related files required by the layer.
-
-## Other Types of Layers in QGIS: Raster Layers
-
-There are other types of layers besides vector layers. The other most common type of layer is the raster layer, which consist of satellite images or maps for reference, aesthetics or additional information, such as grayscales or heatmaps where colors or intensity reflect a varying numerical value. Unlike vector layers, these have a specific resolution that determine how accurate the information is, as well as the file size. Raster layers are also commonly used for continuous data, such as temperature and elevation. Raster layers can be turned into vectors using QGIS, although for the data to be usable, thresholds and cutoffs must be used to narrow data in bins (i.e. elevation 0-10m; 10-20m; 20-30m…). raster layers are commonly shared in .tiff format, and the images contain metadata including georeferenciation (normally, the coordinates of each corner), and the numeric values stored in bands, which were used to generate the colors in the image.
 
 [<<< Previous](../README.md)  | [Next >>>](2setup.md)  
