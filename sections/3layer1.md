@@ -1,20 +1,28 @@
 [<<< Previous](2setup.md)  | [Next >>>](4layerpr.md)  
 
-# Adding a Vector Layer
+# Phase 3: Import your map into ESRI Story Maps
 
-Once you finish installing QGIS and downloading the required layers, go ahead and open the QGIS Desktop app. After loading, you should see something like this:
+We’re going to begin making an ESRI Story map so you can see how it works.
+Here’s all of the context that you need
 
-![Layers in QGIS](images/layer1.png)
+## Content
+New York City’s Top 10 Attractions
+Can you afford to live nearby?
 
-On the image above, I highlighted a few areas and buttons related to layers: The `Add Vector Layer` button, the `Add Raster Layer` button, the `Create New Layer` button, and the `Layers` panel. We will not use the Browser Panel so you can go ahead and close this one clicking on the `X` on the top-right corner of the panel.
+We all know that it’s expensive to live in NYC, but would you need to make a lot more than the average income in order to live by one of the city’s most popular tourist attractions? 
 
-Whenever you add a layer to your project, it will be shown in the Layers Panel. Let’s go ahead and open the Census Blocks layer by clicking on the `Add Vector Layer` button. A dialog like this one should open:
+$115,000 and up!
+With the exception of the Apollo Theater all of the sites are located in neighborhoods with a median household income greater than $115,000.
 
-![Add Vector Layer Window](images/layer2.png)
+Statue of Liberty
+The average income for Manhattanites who live the closest to the Statue of Liberty is 134,266!
 
-Here, click on Browse, go in the BLOCKS folder and select the 061blk00s.zip file directly. When you select it and click on `Open`, you should get this:
+Rockefeller Center
+Most of NYC's tourist sites are actually located in the same neighborhood--Midtown/Midtown South! While this is very convenient for tourists, it's also clear that one needs a lot of money to live in this area since the median household income is $116,456.
 
-![Blocks Layer Added](images/layer3.png)
+[Example](https://storymaps.arcgis.com/stories/179f0bdb4f4c4d5aa820641dd9b9da86) 
+
+
 
 [<<< Previous](2setup.md)  | [Next >>>](4layerpr.md)  
 
