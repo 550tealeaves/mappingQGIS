@@ -1,18 +1,20 @@
 [<<< Previous](3layer1.md)  | [Next >>>](5attrib.md)  
 
-# Layer Properties & Customization
+# Bonus! GIS Glossary
 
-As you can see from the shapes in the layer, this is a polygon vector layer. Each polygon represents a census block, and all together compose the shape of Manhattan. Note that the color of your layer might be different from the one in the images of this tutorial; QGIS chooses layer colors at random when you first open or create one. If for any reason you’d like to change the color of the layer, you can do it by:
+**Attribute**: a characteristic of a feature. Attributes can contain data of different types: strings (text), numerical values, dates, or booleans. Each column in the Attribute Table represents a different attribute.
 
-* Double-click on the layer name in the `Layers` Panel (“061blk00s tgr061…”) to bring up the `Layer Properties` box. 
-* Click on the `Style` tab on the left side and you’ll be able to customize the look and color of the layer.
-* To change the color, click on the colored bar drop-down where it says `Color`. 
-* Above it, you’ll notice a `transparency bar`, which can be useful if you want to visualize more than one layer that overlaps. 
+**Feature**: an element that appears in a layer and typically has attributes. Each row in the Attribute Table represents a different feature. Each feature can be represented on a map by one (or more) vectors, be it points, lines or polygons.
 
-Go ahead and experiment with the styles and choose a visualization to your liking.
+**Georeferencing**: the process of using geographic data to represent features on a GIS.
 
-![Layer Properties](images/pro1.png)
+**Layers**: are "containers" of the data in QGIS. On the map view, layers can be imagined as transparent film sheets that are laid one over another. With the exception of raster layers, each layer contains an Attribute Table, that is, a series of features that in turn have their own attributes. Vector layers can only contain one type of vectors, be it: points, lines or polygons.
 
-Since you already are on the `Properties` box, click on `General` so that we can check out the Coordinate Reference System. You will see that this layer’s Coordinate Reference System (CRS) is “Selected CRS (EPSG:4269, NAD83)”. Keep that in mind and close the `Layer Properties` dialog box.
+**Polygon**: a figure with three or more sides. In GIS, it usually refers to complex areas outlining lakes, city blocks, a set of buildings, or other complex features of the map, that can be outlined using interconnected points. A polygon can have an unlimited amount of points. The more points (or "higher the resolution"), the smoother the polygon will look to the human eye.
 
-[<<< Previous](3layer1.md)  | [Next >>>](5attrib.md)  
+**Raster**: images of a specific location that represent visually continuous data such as temperature and elevation at a given resolution. Higher resolutions mean more precision but also larger file size. Raster layers have no Attribute Table; the values are stored within the image and represented as different hues or colors. Raster images can also be used for reference or aesthetic purposes (e.g. satellite photos).
+
+**Vector**: a scalable point, line or polygon that can be easily created, edited, or deleted using GIS. Does not have a specific resolution. In QGIS, vectors are contained in vector layers, that can only contain a single type of vectors. Each vector represents a single feature, although some features may be represented by more than one vector (e.g. the vector of the United States includes the mainland U.S. polygon but also polygons for Alaska and Hawaii).
+
+
+[<<< Previous](3layer1.md)   
