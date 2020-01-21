@@ -35,7 +35,7 @@ Shapefile of NYC neighborhoods (called Neighborhood Tabulation Areas or NTAs)
   * We are going to keep “MdHHIncE,” the “Pop16plE” and the variables that are keys or identifiers, such as the GEOID, GeoGName, Borough, and we are going to delete the rest of the variables.
   * Make sure that “MdHHIncE” and “Pop16pIE” are formatted as numbers. To do this, you can select the whole columns from row 2 to the last one, then right-click on the selection, click on “Format cells…”, then select “Number” from the category list. Also, specify decimals to “0”. The reason for this is that sometimes converting Excel files to comma-separated-value files (CSV) can bring about some formatting conflicts, so this will hopefully get rid of some of it.
   * Save the file as a CSV. I called mine “JoinClean”
-  * *Note: Another useful way to define column formats is creating a csvt file that specifies the format of each column in a csv file of the same name in the same folder. The csvt is just a txt file which contains text in the form of: "String","Real", "Integer", "String". In this example, column one will be interpreted as a string (text), column 2 as a real number (number with decimals), column 3 as an integer, and so on. We will not do this in this exercise.
+  * *Note: Another useful way to define column formats is creating a csvt file that specifies the format of each column in a csv file of the same name in the same folder. The csvt is just a txt file which contains text in the form of: "String","Real", "Integer", "String". In this example, column one will be interpreted as a string (text), column 2 as a real number (number with decimals), column 3 as an integer, and so on. We will not do this in this exercise.*
 * Be sure to save your changes.
 
 
