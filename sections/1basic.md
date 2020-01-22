@@ -20,7 +20,7 @@ Shapefile of NYC neighborhoods (called Neighborhood Tabulation Areas or NTAs)
 #### 1.	Let’s open each of the files in order.
 
 
-#### 2.	You will see the the “NYCSite.csv” file has already been cleaned for you, so that it only includes the information that we want. Let’s ignore that file for now and work on the ones that need to be cleaned.
+#### 2.	You will see the the “NYCSite.csv” file has already been cleaned for you so that it only includes the information that we want. Let’s ignore that file for now and work on the ones that need to be cleaned.
 
 
 #### 3. Let’s get the data on the Median Household Income by Neighborhood
