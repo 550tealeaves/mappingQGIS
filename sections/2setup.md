@@ -56,7 +56,9 @@
 #### 10.	Let’s add labels for the sites
 * For the New York City Sites layer click **Manage labels** and add the **Name**
 
-#### 11.	Save your map
+#### 11. Now, see if you can format the pop up for the neighborhood layer.
+
+#### 12.	Save your map
 
 
 [<<< Previous](1basic.md)  | [Next >>>](3layer1.md)  
